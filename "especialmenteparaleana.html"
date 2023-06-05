@@ -109,7 +109,7 @@
     });
 
     simBtn.addEventListener('click', () => {
-        newPhraseElement.textContent = "Fico muito feliz que queira dar mais uma oportunidade para gente, quero levar você para a viagem que acabamos não fazendo naquela semana na sorveteria, já pensei em toda programação, então só escolha uma data e aperte o botão 'TE AMO PARA SEMPRE MINHA VENUS'.";
+        newPhraseElement.textContent = "Fico muito feliz que queira dar mais uma oportunidade para gente, quero levar você para a viagem que acabamos não fazendo naquela semana na sorveteria! Já pensei em toda programação, então só escolha uma data.";
         btnContainer.style.display = 'none';
         finalBtnContainer.style.display = 'flex';
     });
