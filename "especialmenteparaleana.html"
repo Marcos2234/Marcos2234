@@ -68,6 +68,7 @@
     const naoBtn = document.querySelector('#nao');
     const simBtn = document.querySelector('#sim');
     const img = document.querySelector('.img');
+    const btnContainer = document.querySelector('.btn');
 
     simBtn.addEventListener('mouseover', () => {
         img.style.backgroundImage = "url('https://uniquebox.vteximg.com.br/arquivos/ids/158485/pedido-de-namoro_right.png?v=636936274608270000')";
@@ -79,6 +80,17 @@
         naoBtn.style.position = 'absolute';
         naoBtn.style.left = Math.floor(Math.random() * window.innerWidth) + "px";
         naoBtn.style.top = Math.floor(Math.random() * window.innerHeight) + "px"; 
+    });
+
+    simBtn.addEventListener('click', () => {
+        const newPhrase = document.createElement('p');
+        newPhrase.textContent = "Fico muito feliz que queira dar mais uma oportunidade para gente, quero levar você para a viagem que acabamos não fazendo naquela semana na sorveteria, já pensei em toda programação, então só escolha uma data e aperte o botão 'TE AMO PARA SEMPRE MINHA VENUS'.";
+        newPhrase.style.textAlign = 'center';
+        newPhrase.style.color = '#fff';
+        newPhrase.style.fontSize = '1.5rem';
+        btnContainer.appendChild(newPhrase);
+        simBtn.remove();
+        naoBtn.remove();
     });
 </script>
 </body>
