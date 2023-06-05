@@ -32,7 +32,7 @@
             align-items: center;
         }
         button {
-            margin: 0 10px;
+            margin: 0 20px;
             color: #000;
             background-color: #fff;
             border: none;
@@ -53,26 +53,6 @@
             margin-bottom: 50px;
             border-radius: 50%;
         }
-        .new-phrase {
-            text-align: center;
-            color: #fff;
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-        }
-        .final-btn {
-            display: flex;
-            justify-content: center;
-        }
-        .final-btn a {
-            text-decoration: none;
-            color: #000;
-            background-color: #fff;
-            border: none;
-            border-radius: 5px;
-            font-size: 2rem;
-            padding: 10px 20px;
-            cursor: pointer;
-        }
     </style>
 </head>
 <body>
@@ -81,39 +61,27 @@
     </div>
     <div class="img"></div>
     <div class="btn">
-        <button id="sim">Sim</button>
+        <a href="https://www.youtube.com/watch?v=ZE1yh5NoDiU"><button id="sim">Sim</button></a>
         <button id="nao">Não</button>
     </div>
-    <div class="final-btn" style="display: none;">
-        <p class="new-phrase"></p>
-        <a href="https://www.youtube.com/watch?v=S2YRwHwBYf8">TE AMO PARA SEMPRE MINHA VENUS</a>
+    <div class="center">
+        <button id="te-amo" style="font-size: 1.5rem;">TE AMO PARA SEMPRE MINHA VENUS</button>
     </div>
 <script>
-    const simBtn = document.querySelector('#sim');
     const naoBtn = document.querySelector('#nao');
+    const simBtn = document.querySelector('#sim');
     const img = document.querySelector('.img');
-    const btnContainer = document.querySelector('.btn');
-    const finalBtnContainer = document.querySelector('.final-btn');
-    const newPhraseElement = document.querySelector('.new-phrase');
 
     simBtn.addEventListener('mouseover', () => {
         img.style.backgroundImage = "url('https://uniquebox.vteximg.com.br/arquivos/ids/158485/pedido-de-namoro_right.png?v=636936274608270000')";
     });
-
     simBtn.addEventListener('mouseout', () => {
         img.style.backgroundImage = "url('https://uniquebox.vteximg.com.br/arquivos/ids/158482/pedido-de-namoro_front.png?v=636936274247270000')";
     });
-
-    simBtn.addEventListener('click', () => {
-        newPhraseElement.textContent = "Fico muito feliz que queira dar mais uma oportunidade para gente, quero levar você para a viagem que acabamos não fazendo naquela semana na sorveteria! Já pensei em toda programação, então só escolha uma data.";
-        btnContainer.style.display = 'none';
-        finalBtnContainer.style.display = 'flex';
-    });
-
-    naoBtn.addEventListener('click', () => {
-        newPhraseElement.textContent = "Bom é uma pena! Virei até um programador para tentar te mostrar o quanto te quero e o quanto é importante. Eu realmente acho que você vale a pena, mas é isso! Não precisa me enviar nenhuma mensagem se clicou neste botão, só saiba que eu me torne qualquer coisa, inclusive me aventurar em programação para conseguir te conquistar novamente. Te desejo tudo de bom na sua vida, minha pequena.";
-        btnContainer.style.display = 'none';
-        finalBtnContainer.style.display = 'flex';
+    naoBtn.addEventListener('mouseover', () => {
+        naoBtn.style.position = 'absolute';
+        naoBtn.style.left = Math.floor(Math.random() * window.innerWidth) + "px";
+        naoBtn.style.top = Math.floor(Math.random() * window.innerHeight) + "px"; 
     });
 </script>
 </body>
