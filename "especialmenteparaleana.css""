@@ -2,22 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Vamos nos dar mais uma chance de sermos para sempre?</title>
     <style>
         body {
             background-color: #4b0082;
             overflow: hidden;
+            margin: 0;
+            padding: 0;
         }
         h1 {
             text-align: center;
             text-transform: uppercase;
             color: #fff;
+            margin-top: 20px;
+            margin-bottom: 40px;
         }
         .center {
             display: flex;
-            margin: 0;
             justify-content: center;
             align-items: center;
             height: 30vh;
@@ -30,14 +32,16 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            margin-bottom: 40px;
         }
         button {
-            margin: 0 20px;
+            margin: 0 10px;
             color: #000;
             background-color: #fff;
             border: none;
             border-radius: 5px;
-            font-size: 2rem;
+            font-size: 16px;
+            padding: 10px 20px;
             cursor: pointer;
         }
         .img {
@@ -47,11 +51,32 @@
             background-color: #fff;
             background-repeat: no-repeat;
             background-position: center;
-            height: 300px;
-            width: 300px;
+            height: 200px;
+            width: 200px;
             margin: 0 auto;
-            margin-bottom: 50px;
+            margin-bottom: 20px;
             border-radius: 50%;
+        }
+        .new-phrase {
+            text-align: center;
+            color: #fff;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .final-btn {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .final-btn a {
+            text-decoration: none;
+            color: #000;
+            background-color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            padding: 10px 20px;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -61,27 +86,39 @@
     </div>
     <div class="img"></div>
     <div class="btn">
-        <a href="https://www.youtube.com/watch?v=ZE1yh5NoDiU"><button id="sim">Sim</button></a>
+        <button id="sim">Sim</button>
         <button id="nao">Não</button>
     </div>
-    <div class="center">
-        <button id="te-amo" style="font-size: 1.5rem;">TE AMO PARA SEMPRE MINHA VENUS</button>
+    <div class="final-btn" style="display: none;">
+        <p class="new-phrase"></p>
+        <a href="https://www.youtube.com/watch?v=S2YRwHwBYf8">TE AMO PARA SEMPRE MINHA VENUS</a>
     </div>
 <script>
-    const naoBtn = document.querySelector('#nao');
     const simBtn = document.querySelector('#sim');
+    const naoBtn = document.querySelector('#nao');
     const img = document.querySelector('.img');
+    const btnContainer = document.querySelector('.btn');
+    const finalBtnContainer = document.querySelector('.final-btn');
+    const newPhraseElement = document.querySelector('.new-phrase');
 
     simBtn.addEventListener('mouseover', () => {
         img.style.backgroundImage = "url('https://uniquebox.vteximg.com.br/arquivos/ids/158485/pedido-de-namoro_right.png?v=636936274608270000')";
     });
+
     simBtn.addEventListener('mouseout', () => {
         img.style.backgroundImage = "url('https://uniquebox.vteximg.com.br/arquivos/ids/158482/pedido-de-namoro_front.png?v=636936274247270000')";
     });
-    naoBtn.addEventListener('mouseover', () => {
-        naoBtn.style.position = 'absolute';
-        naoBtn.style.left = Math.floor(Math.random() * window.innerWidth) + "px";
-        naoBtn.style.top = Math.floor(Math.random() * window.innerHeight) + "px"; 
+
+    simBtn.addEventListener('click', () => {
+        newPhraseElement.textContent = "Fico muito feliz que queira dar mais uma oportunidade para gente, quero levar você para a viagem que acabamos não fazendo naquela semana na sorveteria! Já pensei em toda programação, então só escolha uma data.";
+        btnContainer.style.display = 'none';
+        finalBtnContainer.style.display = 'flex';
+    });
+
+    naoBtn.addEventListener('click', () => {
+        newPhraseElement.textContent = "Bom é uma pena! Virei até um programador para tentar te mostrar o quanto te quero e o quanto é importante. Eu realmente acho que você vale a pena, mas é isso! Não precisa me enviar nenhuma mensagem se clicou neste botão, só saiba que eu me torne qualquer coisa, inclusive me aventurar em programação para conseguir te conquistar novamente. Te desejo tudo de bom na sua vida, minha pequena.";
+        btnContainer.style.display = 'none';
+        finalBtnContainer.style.display = 'flex';
     });
 </script>
 </body>
