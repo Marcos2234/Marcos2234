@@ -53,6 +53,11 @@
             margin-bottom: 50px;
             border-radius: 50%;
         }
+        .new-phrase {
+            text-align: center;
+            color: #fff;
+            font-size: 1.5rem;
+        }
     </style>
 </head>
 <body>
@@ -85,9 +90,7 @@
     simBtn.addEventListener('click', () => {
         const newPhrase = document.createElement('p');
         newPhrase.textContent = "Fico muito feliz que queira dar mais uma oportunidade para gente, quero levar você para a viagem que acabamos não fazendo naquela semana na sorveteria, já pensei em toda programação, então só escolha uma data e aperte o botão 'TE AMO PARA SEMPRE MINHA VENUS'.";
-        newPhrase.style.textAlign = 'center';
-        newPhrase.style.color = '#fff';
-        newPhrase.style.fontSize = '1.5rem';
+        newPhrase.classList.add('new-phrase');
         btnContainer.appendChild(newPhrase);
         simBtn.remove();
         naoBtn.remove();
