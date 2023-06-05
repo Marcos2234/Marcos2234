@@ -57,6 +57,21 @@
             text-align: center;
             color: #fff;
             font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        .final-btn {
+            display: flex;
+            justify-content: center;
+        }
+        .final-btn a {
+            text-decoration: none;
+            color: #000;
+            background-color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 2rem;
+            padding: 10px 20px;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -66,14 +81,18 @@
     </div>
     <div class="img"></div>
     <div class="btn">
-        <a href="https://www.youtube.com/watch?v=ZE1yh5NoDiU"><button id="sim">Sim</button></a>
+        <button id="sim">Sim</button>
         <button id="nao">Não</button>
+    </div>
+    <div class="final-btn" style="display: none;">
+        <a href="https://www.youtube.com/watch?v=S2YRwHwBYf8">TE AMO PARA SEMPRE MINHA VENUS</a>
     </div>
 <script>
     const naoBtn = document.querySelector('#nao');
     const simBtn = document.querySelector('#sim');
     const img = document.querySelector('.img');
     const btnContainer = document.querySelector('.btn');
+    const finalBtnContainer = document.querySelector('.final-btn');
 
     simBtn.addEventListener('mouseover', () => {
         img.style.backgroundImage = "url('https://uniquebox.vteximg.com.br/arquivos/ids/158485/pedido-de-namoro_right.png?v=636936274608270000')";
@@ -84,16 +103,16 @@
     naoBtn.addEventListener('mouseover', () => {
         naoBtn.style.position = 'absolute';
         naoBtn.style.left = Math.floor(Math.random() * window.innerWidth) + "px";
-        naoBtn.style.top = Math.floor(Math.random() * window.innerHeight) + "px"; 
+        naoBtn.style.top = Math.floor(Math.random() * window.innerHeight) + "px";
     });
 
     simBtn.addEventListener('click', () => {
         const newPhrase = document.createElement('p');
         newPhrase.textContent = "Fico muito feliz que queira dar mais uma oportunidade para gente, quero levar você para a viagem que acabamos não fazendo naquela semana na sorveteria, já pensei em toda programação, então só escolha uma data e aperte o botão 'TE AMO PARA SEMPRE MINHA VENUS'.";
         newPhrase.classList.add('new-phrase');
-        btnContainer.appendChild(newPhrase);
-        simBtn.remove();
-        naoBtn.remove();
+        btnContainer.style.display = 'none';
+        finalBtnContainer.style.display = 'flex';
+        finalBtnContainer.appendChild(newPhrase);
     });
 </script>
 </body>
