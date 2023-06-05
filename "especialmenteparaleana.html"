@@ -85,6 +85,7 @@
         <button id="nao">Não</button>
     </div>
     <div class="final-btn" style="display: none;">
+        <p class="new-phrase"></p>
         <a href="https://www.youtube.com/watch?v=S2YRwHwBYf8">TE AMO PARA SEMPRE MINHA VENUS</a>
     </div>
 <script>
@@ -93,6 +94,7 @@
     const img = document.querySelector('.img');
     const btnContainer = document.querySelector('.btn');
     const finalBtnContainer = document.querySelector('.final-btn');
+    const newPhraseElement = document.querySelector('.new-phrase');
 
     simBtn.addEventListener('mouseover', () => {
         img.style.backgroundImage = "url('https://uniquebox.vteximg.com.br/arquivos/ids/158485/pedido-de-namoro_right.png?v=636936274608270000')";
@@ -107,12 +109,9 @@
     });
 
     simBtn.addEventListener('click', () => {
-        const newPhrase = document.createElement('p');
-        newPhrase.textContent = "Fico muito feliz que queira dar mais uma oportunidade para gente, quero levar você para a viagem que acabamos não fazendo naquela semana na sorveteria, já pensei em toda programação, então só escolha uma data e aperte o botão 'TE AMO PARA SEMPRE MINHA VENUS'.";
-        newPhrase.classList.add('new-phrase');
+        newPhraseElement.textContent = "Fico muito feliz que queira dar mais uma oportunidade para gente, quero levar você para a viagem que acabamos não fazendo naquela semana na sorveteria, já pensei em toda programação, então só escolha uma data e aperte o botão 'TE AMO PARA SEMPRE MINHA VENUS'.";
         btnContainer.style.display = 'none';
         finalBtnContainer.style.display = 'flex';
-        finalBtnContainer.appendChild(newPhrase);
     });
 </script>
 </body>
